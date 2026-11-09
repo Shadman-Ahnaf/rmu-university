@@ -1,0 +1,603 @@
+
+/* =========================================
+   CAMPUS LIFE SECTION
+========================================= */
+
+.campus-life-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 110px 0 45px;
+  background: linear-gradient(
+    120deg,
+    #091c30,
+    #142f4e,
+    #102945,
+    #0b2038
+  );
+  background-size: 300% 300%;
+  animation: campus-gradient 22s ease infinite;
+  color: #fff;
+}
+
+@keyframes campus-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Soft ambient glow */
+
+.campus-life-section::before,
+.campus-life-section::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.campus-life-section::before {
+  top: 5%;
+  right: -180px;
+  background: rgba(67, 120, 170, 0.16);
+}
+
+.campus-life-section::after {
+  bottom: -200px;
+  left: -180px;
+  background: rgba(179, 138, 73, 0.09);
+}
+
+.campus-life-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.campus-life-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 45px;
+}
+
+.campus-life-heading > div {
+  max-width: 650px;
+}
+
+.campus-life-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: #e5c786;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.campus-life-line {
+  width: 34px;
+  height: 1px;
+  background: #b38a49;
+}
+
+.campus-life-heading h2 {
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.campus-life-heading h2 span {
+  display: block;
+  color: #e5c786;
+}
+
+.campus-life-heading p {
+  max-width: 390px;
+  margin: 0 0 5px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   SHOWCASE LAYOUT
+========================================= */
+
+.campus-life-showcase {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 15px;
+  min-height: 550px;
+}
+
+/* =========================================
+   FEATURED CARD
+========================================= */
+
+.campus-life-featured {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 550px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 5px;
+  background: #10253d;
+  isolation: isolate;
+}
+
+.campus-life-video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.campus-life-featured:hover .campus-life-video {
+  transform: scale(1.055);
+}
+
+.campus-life-featured-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 19, 34, 0.38) 0%,
+    rgba(5, 19, 34, 0.05) 38%,
+    rgba(5, 19, 34, 0.88) 100%
+  );
+  pointer-events: none;
+}
+
+.campus-life-featured-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 27px 30px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.campus-life-live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e5c786;
+}
+
+.campus-life-live > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e5c786;
+  box-shadow: 0 0 12px rgba(229, 199, 134, 0.7);
+  animation: campus-live-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes campus-live-pulse {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}
+
+.campus-life-featured-content {
+  padding: 30px;
+}
+
+.campus-life-featured-subtitle {
+  display: block;
+  margin-bottom: 12px;
+  color: #e5c786;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.campus-life-featured-content h3 {
+  margin: 0 0 30px;
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.campus-life-featured-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 19px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.campus-life-featured-arrow {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(229, 199, 134, 0.8);
+  border-radius: 50%;
+  color: #e5c786;
+  transition:
+    color 300ms ease,
+    background 300ms ease,
+    transform 300ms ease;
+}
+
+.campus-life-featured:hover .campus-life-featured-arrow {
+  color: #142b46;
+  background: #e5c786;
+  transform: rotate(45deg);
+}
+
+/* =========================================
+   SIDE CARDS
+========================================= */
+
+.campus-life-side {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  min-width: 0;
+}
+
+.campus-life-small-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  background: #142b46;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  isolation: isolate;
+  transition:
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.campus-life-small-card .campus-life-video {
+  opacity: 0.8;
+}
+
+.campus-life-small-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 19, 34, 0.1),
+    rgba(5, 19, 34, 0.84)
+  );
+  transition: background 350ms ease;
+}
+
+.campus-life-small-card:hover {
+  border-color: #e5c786;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.campus-life-small-card:hover .campus-life-video {
+  transform: scale(1.08);
+}
+
+.campus-life-small-number {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.campus-life-small-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-right: 30px;
+}
+
+.campus-life-small-content > span {
+  color: #e5c786;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(7px);
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.campus-life-small-content strong {
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: clamp(17px, 1.8vw, 23px);
+  font-weight: 500;
+  line-height: 1.2;
+  transition: transform 300ms ease;
+}
+
+.campus-life-small-arrow {
+  position: absolute;
+  right: 17px;
+  bottom: 18px;
+  display: grid;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    color 300ms ease,
+    background 300ms ease;
+}
+
+.campus-life-small-card:hover .campus-life-small-content > span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.campus-life-small-card:hover .campus-life-small-content strong {
+  transform: translateY(-2px);
+}
+
+.campus-life-small-card:hover .campus-life-small-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+  color: #142b46;
+  background: #e5c786;
+}
+
+/* Subtle progress accent */
+
+.campus-life-small-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #e5c786, #b38a49);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms ease;
+}
+
+.campus-life-small-card:hover .campus-life-small-progress {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   FOOTER SIGNATURE
+========================================= */
+
+.campus-life-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 28px;
+  padding-top: 19px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.43);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.campus-life-footer span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .campus-life-section {
+    padding: 85px 0 40px;
+  }
+
+  .campus-life-container {
+    padding: 0 28px;
+  }
+
+  .campus-life-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 35px;
+  }
+
+  .campus-life-showcase {
+    grid-template-columns: 1.35fr 1fr;
+    min-height: 470px;
+    gap: 11px;
+  }
+
+  .campus-life-featured {
+    min-height: 470px;
+  }
+
+  .campus-life-side {
+    gap: 11px;
+  }
+
+  .campus-life-featured-content {
+    padding: 23px;
+  }
+
+  .campus-life-featured-top {
+    padding: 22px;
+  }
+
+  .campus-life-small-card {
+    padding: 15px;
+  }
+
+  .campus-life-small-content strong {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .campus-life-section {
+    padding: 70px 0 28px;
+  }
+
+  .campus-life-container {
+    padding: 0 19px;
+  }
+
+  .campus-life-heading {
+    margin-bottom: 28px;
+  }
+
+  .campus-life-heading h2 {
+    font-size: 40px;
+  }
+
+  .campus-life-heading p {
+    font-size: 13px;
+  }
+
+  .campus-life-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .campus-life-featured {
+    min-height: 360px;
+  }
+
+  .campus-life-featured-top {
+    padding: 19px;
+    font-size: 8px;
+  }
+
+  .campus-life-featured-content {
+    padding: 19px;
+  }
+
+  .campus-life-featured-content h3 {
+    font-size: 36px;
+    margin-bottom: 23px;
+  }
+
+  .campus-life-featured-subtitle {
+    font-size: 9px;
+  }
+
+  .campus-life-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 145px);
+    gap: 9px;
+  }
+
+  .campus-life-small-card {
+    padding: 13px;
+  }
+
+  .campus-life-small-content {
+    padding-right: 0;
+  }
+
+  .campus-life-small-content > span {
+    font-size: 8px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .campus-life-small-content strong {
+    font-size: 18px;
+  }
+
+  .campus-life-small-arrow {
+    top: 12px;
+    right: 12px;
+    bottom: auto;
+    width: 29px;
+    height: 29px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .campus-life-footer {
+    flex-direction: column;
+    gap: 11px;
+    font-size: 8px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .campus-life-section {
+    animation: none;
+  }
+
+  .campus-life-section *,
+  .campus-life-section::before,
+  .campus-life-section::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

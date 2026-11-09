@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Search, Languages, ChevronDown, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 import FullScreenMenu from "./FullScreenMenu";
 import SearchOverlay from "./SearchOverlay";
 
@@ -36,7 +36,7 @@ const navigation = [
     key: "academics" as const,
     links: [
       { label: "Academic Programs", to: "/#academic-programs" },
-      { label: "Medical Education", to: "/#medical-education" },
+      { label: "Medicine (MBBS)", to: "/departments/medicine" },
       { label: "Dental Education", to: "/#dental-education" },
       { label: "Academic Calendar", to: "/#academic-calendar" },
     ],
@@ -60,19 +60,17 @@ export default function SiteHeader() {
   const [activeDropdown, setActiveDropdown] =
     useState<DropdownName | null>(null);
 
-  const [language, setLanguage] = useState<Language>(() => {
-    const savedLanguage = localStorage.getItem("rmu-language");
-    return savedLanguage === "bn" ? "bn" : "en";
-  });
+const { i18n } = useTranslation();
+
+const language: Language =
+  i18n.resolvedLanguage === "bn" ? "bn" : "en";
 
   const previousScrollY = useRef(0);
   const overlayOpen = menuOpen || searchOpen;
 
-  const changeLanguage = (selectedLanguage: Language) => {
-    setLanguage(selectedLanguage);
-    localStorage.setItem("rmu-language", selectedLanguage);
-  };
-
+const changeLanguage = (selectedLanguage: Language) => {
+  void i18n.changeLanguage(selectedLanguage);
+};
   const closeOverlays = () => {
     setMenuOpen(false);
     setSearchOpen(false);

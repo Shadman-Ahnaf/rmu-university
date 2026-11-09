@@ -1,0 +1,287 @@
+
+/* =========================================
+   ANNUAL PERFORMANCE AGREEMENT
+========================================= */
+
+.apa-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 110px;
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(179, 138, 73, 0.07),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 92% 85%,
+      rgba(54, 112, 168, 0.07),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+.apa-container {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.apa-heading {
+  max-width: 680px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.apa-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #a27c3d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.apa-heading h2 {
+  margin: 0;
+  color: #142b46;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.apa-heading p {
+  max-width: 590px;
+  margin: 17px auto 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CARD GRID
+========================================= */
+
+.apa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* =========================================
+   APA CARD
+========================================= */
+
+.apa-card {
+  position: relative;
+  display: flex;
+  min-height: 245px;
+  flex-direction: column;
+  padding: 27px 28px 24px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #cbd9e8;
+  border-radius: 12px;
+
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.apa-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #b38a49;
+  content: "";
+  transition: width 0.35s ease;
+}
+
+.apa-card:hover {
+  background: #f3f7fc;
+  border-color: #a9bfd8;
+  box-shadow: 0 12px 32px rgba(20, 43, 70, 0.08);
+  transform: translateY(-5px);
+}
+
+.apa-card:hover::before {
+  width: 100%;
+}
+
+/* Card Top */
+
+.apa-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.apa-icon {
+  display: flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+
+  color: #142b46;
+  background: #edf3f9;
+  border: 1px solid #e1eaf3;
+  border-radius: 10px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.apa-card:hover .apa-icon {
+  color: #ffffff;
+  background: #142b46;
+  border-color: #142b46;
+}
+
+.apa-card-number {
+  color: #b9c4d0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Card Content */
+
+.apa-card-content {
+  flex: 1;
+}
+
+.apa-card-content h3 {
+  margin: 0 0 10px;
+  color: #142b46;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.apa-card-content p {
+  margin: 0;
+  color: #718096;
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+/* Card Link */
+
+.apa-card-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+
+  color: #a27c3d;
+  font-size: 13px;
+  font-weight: 650;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.apa-card:hover .apa-card-link {
+  gap: 13px;
+  color: #142b46;
+}
+
+.apa-card:focus-visible {
+  outline: 3px solid rgba(54, 112, 168, 0.4);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .apa-container {
+    width: min(100% - 48px, 900px);
+  }
+
+  .apa-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .apa-card {
+    min-height: 235px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .apa-section {
+    padding: 75px 0 80px;
+  }
+
+  .apa-container {
+    width: calc(100% - 36px);
+  }
+
+  .apa-heading {
+    margin-bottom: 35px;
+  }
+
+  .apa-heading h2 {
+    font-size: 29px;
+  }
+
+  .apa-heading p {
+    font-size: 14px;
+  }
+
+  .apa-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .apa-card {
+    min-height: 220px;
+    padding: 23px;
+  }
+
+  .apa-card-top {
+    margin-bottom: 18px;
+  }
+
+  .apa-card-content h3 {
+    font-size: 17px;
+  }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .apa-card,
+  .apa-card::before,
+  .apa-icon,
+  .apa-card-link {
+    transition: none;
+  }
+
+  .apa-card:hover {
+    transform: none;
+  }
+}

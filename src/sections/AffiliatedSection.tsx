@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -11,8 +10,6 @@ import SectionReveal from "../components/SectionReveal";
 const institutions = [
   {
     title: "Medical Colleges",
-    subtitle: "Medical Education",
-    description: "Institutions dedicated to developing future medical professionals.",
     image:
       "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=85",
     icon: Stethoscope,
@@ -20,8 +17,6 @@ const institutions = [
   },
   {
     title: "Dental Colleges",
-    subtitle: "Dental Education",
-    description: "Supporting professional education in dental healthcare.",
     image:
       "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=85",
     icon: GraduationCap,
@@ -29,8 +24,6 @@ const institutions = [
   },
   {
     title: "Postgraduate Institutes",
-    subtitle: "Advanced Learning",
-    description: "Encouraging advanced learning and professional development.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85",
     icon: Building2,
@@ -46,31 +39,18 @@ export default function AffiliatedSection() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
 
-        {/* Heading */}
+        {/* Section Heading */}
         <SectionReveal>
-          <div className="mb-12 flex flex-col justify-between gap-5 md:mb-16 md:flex-row md:items-end">
-            <div>
-              <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.25em] text-[#A77A32]">
-                Our Academic Network
-              </span>
-
-              <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-[#142B46] md:text-5xl">
-                A Network of
-                <span className="block text-[#A77A32]">
-                  Medical Excellence.
-                </span>
-              </h2>
-            </div>
-
-            <p className="max-w-sm text-sm leading-7 text-[#647184]">
-              Connecting institutions through medical education,
-              professional development, and academic collaboration.
-            </p>
-          </div>
+          <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-[#142B46] md:text-5xl">
+            A Network of
+            <span className="block text-[#A77A32]">
+              Medical Excellence.
+            </span>
+          </h2>
         </SectionReveal>
 
-        {/* Institution cards */}
-        <div className="grid gap-6 md:grid-cols-3">
+        {/* Institution Cards */}
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {institutions.map((institution, index) => {
             const Icon = institution.icon;
 
@@ -102,26 +82,18 @@ export default function AffiliatedSection() {
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6 md:p-7">
-                    <span className="mb-3 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[#A77A32]">
-                      {institution.subtitle}
-                    </span>
-
-                    <h3 className="mb-3 text-xl font-semibold text-[#142B46]">
+                  {/* Card Content */}
+                  <div className="flex items-center justify-between gap-4 p-6 md:p-7">
+                    <h3 className="text-xl font-semibold text-[#142B46] transition-colors duration-300 group-hover:text-[#A77A32]">
                       {institution.title}
                     </h3>
 
-                    <p className="mb-6 text-sm leading-6 text-[#718096]">
-                      {institution.description}
-                    </p>
-
                     <a
                       href="#academics"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#174A70] transition-all duration-300 group-hover:gap-4"
+                      aria-label={`Explore ${institution.title}`}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F0F3F6] text-[#174A70] transition-all duration-300 group-hover:bg-[#142B46] group-hover:text-white"
                     >
-                      Explore More
-                      <ArrowUpRight size={17} />
+                      <ArrowUpRight size={19} />
                     </a>
                   </div>
                 </motion.article>
@@ -129,28 +101,6 @@ export default function AffiliatedSection() {
             );
           })}
         </div>
-
-        {/* Bottom accent */}
-        <SectionReveal>
-          <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl bg-[#142B46] px-7 py-8 text-center sm:flex-row sm:text-left md:px-10">
-            <div>
-              <h3 className="text-xl font-semibold text-white md:text-2xl">
-                Explore the RMU academic network
-              </h3>
-              <p className="mt-2 text-sm text-white/60">
-                Discover academic opportunities and institutional connections.
-              </p>
-            </div>
-
-            <a
-              href="#academics"
-              className="inline-flex shrink-0 items-center gap-3 rounded-lg bg-[#D5A64A] px-6 py-3 text-sm font-semibold text-[#142B46] transition-colors hover:bg-[#E7BD70]"
-            >
-              Explore Academics
-              <ArrowUpRight size={18} />
-            </a>
-          </div>
-        </SectionReveal>
 
       </div>
     </section>

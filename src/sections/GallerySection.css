@@ -1,0 +1,342 @@
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+.gallery-section {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 28px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(179, 138, 73, 0.09),
+      transparent 28%
+    ),
+    #F4F1E9;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.gallery-heading {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+  max-width: 1440px;
+  margin: 0 auto 48px;
+  padding: 0 48px;
+}
+
+.gallery-heading-content {
+  max-width: 700px;
+}
+
+.gallery-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #A27C3D;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.gallery-heading h2 {
+  margin: 0;
+  color: #142B46;
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.gallery-heading h2 span {
+  display: block;
+  color: #A27C3D;
+}
+
+.gallery-heading p {
+  max-width: 530px;
+  margin-top: 18px;
+  color: #667386;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.gallery-explore-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #B38A49;
+  color: #142B46;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 250ms ease;
+}
+
+.gallery-explore-link:hover {
+  color: #A27C3D;
+}
+
+/* =========================================
+   MARQUEE / TRAIN ANIMATION
+========================================= */
+
+.gallery-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*
+  Each track contains two identical groups.
+  Moving by exactly -50% or +50% makes
+  the loop seamless.
+*/
+
+.gallery-track {
+  display: flex;
+  width: max-content;
+  flex: 0 0 auto;
+  animation: gallery-move-right 60s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Second row has a slightly different speed */
+.gallery-track:nth-child(2) {
+  animation-duration: 72s;
+}
+
+/* Each group must have exactly the same layout */
+.gallery-track-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  padding-right: 14px;
+}
+
+/* =========================================
+   IMAGE CARDS
+========================================= */
+
+.gallery-image-card {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  height: 225px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(20, 43, 70, 0.12);
+  border-radius: 5px;
+  background: #E4DED1;
+  isolation: isolate;
+}
+
+.gallery-image-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 450ms ease;
+}
+
+.gallery-image-card:hover img {
+  transform: scale(1.055);
+}
+
+/* Subtle caption */
+.gallery-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px;
+  color: #FFFFFF;
+  background: linear-gradient(
+    to top,
+    rgba(11, 32, 54, 0.88),
+    rgba(11, 32, 54, 0.08) 65%,
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.gallery-image-card:hover .gallery-image-overlay {
+  opacity: 1;
+}
+
+.gallery-image-overlay span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.gallery-image-overlay svg {
+  flex-shrink: 0;
+  color: #E5C786;
+}
+
+/* =========================================
+   RIGHTWARD LOOP
+========================================= */
+@keyframes gallery-move-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* =========================================
+   BOTTOM SIGNATURE
+========================================= */
+
+.gallery-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1344px;
+  margin: 38px auto 0;
+  padding: 18px 0 0;
+  border-top: 1px solid rgba(20, 43, 70, 0.13);
+  color: #89909A;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .gallery-section {
+    padding-top: 72px;
+  }
+
+  .gallery-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 28px;
+    margin-bottom: 38px;
+  }
+
+  .gallery-image-card {
+    height: 185px;
+  }
+
+  .gallery-track-group {
+    gap: 11px;
+    padding-right: 11px;
+  }
+
+  .gallery-bottom {
+    margin-right: 28px;
+    margin-left: 28px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .gallery-section {
+    padding-top: 60px;
+    padding-bottom: 22px;
+  }
+
+  .gallery-heading {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .gallery-heading h2 {
+    font-size: 36px;
+  }
+
+  .gallery-heading p {
+    font-size: 13px;
+  }
+
+  .gallery-image-card {
+    height: 150px;
+    border-radius: 4px;
+  }
+
+  .gallery-track-group {
+    gap: 9px;
+    padding-right: 9px;
+  }
+
+  .gallery-track {
+    animation-duration: 48s;
+  }
+
+  .gallery-track:nth-child(2) {
+    animation-duration: 58s;
+  }
+
+  .gallery-image-overlay {
+    padding: 10px;
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(11, 32, 54, 0.65),
+      transparent 65%
+    );
+  }
+
+  .gallery-image-overlay span {
+    font-size: 10px;
+  }
+
+  .gallery-image-overlay svg {
+    width: 14px;
+  }
+
+  .gallery-bottom {
+    flex-direction: column;
+    margin: 28px 20px 0;
+    font-size: 8px;
+  }
+}
+.gallery-marquee {
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.gallery-marquee.is-dragging {
+  cursor: grabbing;
+}
+
+.gallery-marquee.is-dragging .gallery-track {
+  animation-play-state: paused;
+}

@@ -1,0 +1,31 @@
+{
+  "navigation": {
+    "about": "পরিচিতি",
+    "administration": "প্রশাসন",
+    "academics": "শিক্ষা কার্যক্রম",
+    "admission": "ভর্তি",
+    "contact": "যোগাযোগ",
+    "universityOverview": "বিশ্ববিদ্যালয় পরিচিতি",
+    "missionVision": "লক্ষ্য ও উদ্দেশ্য",
+    "history": "ইতিহাস ও পটভূমি",
+    "campusFacilities": "ক্যাম্পাস ও সুযোগ-সুবিধা",
+    "viceChancellor": "উপাচার্য",
+    "universityAuthorities": "বিশ্ববিদ্যালয় কর্তৃপক্ষ",
+    "academicCouncil": "একাডেমিক কাউন্সিল",
+    "administrativeOffices": "প্রশাসনিক দপ্তরসমূহ",
+    "academicPrograms": "শিক্ষা কার্যক্রম",
+    "medicine": "মেডিসিন (এমবিবিএস)",
+    "dentalEducation": "ডেন্টাল শিক্ষা",
+    "academicCalendar": "শিক্ষাবর্ষের বর্ষপঞ্জি",
+    "undergraduateAdmission": "স্নাতক পর্যায়ে ভর্তি",
+    "postgraduateAdmission": "স্নাতকোত্তর পর্যায়ে ভর্তি",
+    "admissionNotices": "ভর্তি বিজ্ঞপ্তি",
+    "howToApply": "আবেদনের পদ্ধতি"
+  },
+  "header": {
+    "search": "ওয়েবসাইটে অনুসন্ধান করুন",
+    "explore": "অনুসন্ধান করুন",
+    "close": "বন্ধ করুন",
+    "language": "ভাষা পরিবর্তন করুন"
+  }
+}
